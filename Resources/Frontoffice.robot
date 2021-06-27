@@ -30,9 +30,9 @@ verify message is sent
 
 Test multiple contact details
     [Arguments]    ${User_Data}
-    Load forntoffice the URL
-    verify forntoffice is loaded
-    navigate to contact by clicking button
+#    Load forntoffice the URL
+#    verify forntoffice is loaded
+#    navigate to contact by clicking button
     input user details in contact us form and send message  ${User_Data}
     ${status} =     verify message is sent
     should be equal   ${status}     Sucess
