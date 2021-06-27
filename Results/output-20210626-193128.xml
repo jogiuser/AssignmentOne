@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.5 on win32)" generated="20210626 19:31:28.597" rpa="false" schemaversion="2">
+<suite id="s1" name="TC002" source="C:\Users\shivarajkumar\PycharmProjects\AssignmentOne\tests\TC002.robot">
+<test id="s1-t1" name="contact us details sent">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${input.browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210626 19:31:28.923" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210626 19:31:28.922" endtime="20210626 19:31:31.038"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210626 19:31:31.038" endtime="20210626 19:31:31.048"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:28.922" endtime="20210626 19:31:31.049"/>
+</kw>
+<kw name="Load the URL" library="Frontoffice">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${input.url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210626 19:31:31.053" level="INFO">Opening url 'http://www.robotframeworktutorial.com/front-office/'</msg>
+<status status="PASS" starttime="20210626 19:31:31.051" endtime="20210626 19:31:36.728"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:31.050" endtime="20210626 19:31:36.728"/>
+</kw>
+<kw name="verify app is loaded" library="Frontoffice">
+<kw name="verify landing page" library="LandingPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Landing_Verification}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210626 19:31:36.731" endtime="20210626 19:31:36.752"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:36.730" endtime="20210626 19:31:36.752"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:36.729" endtime="20210626 19:31:36.753"/>
+</kw>
+<kw name="Navigate to Contact by clicking button" library="Frontoffice">
+<kw name="click on the Contact button" library="Contact">
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210626 19:31:40.757" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20210626 19:31:36.755" endtime="20210626 19:31:40.757"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${CONTACT_BUTTON}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210626 19:31:40.757" level="INFO">Clicking link 'Contact'.</msg>
+<status status="PASS" starttime="20210626 19:31:40.757" endtime="20210626 19:31:40.820"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:36.754" endtime="20210626 19:31:40.821"/>
+</kw>
+<kw name="verify Contact us displayed" library="Contact">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210626 19:31:45.822" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210626 19:31:40.821" endtime="20210626 19:31:45.822"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Contact Us</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210626 19:31:45.822" endtime="20210626 19:31:45.834"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:40.821" endtime="20210626 19:31:45.835"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:36.753" endtime="20210626 19:31:45.835"/>
+</kw>
+<kw name="input user details in contact us form and send message" library="Frontoffice">
+<kw name="inuput user details in contact us" library="Contact">
+<arg>${User_Data}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=name</arg>
+<arg>${User_Data.name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 19:31:45.837" level="INFO">Typing text 'jogi kumar' into text field 'id=name'.</msg>
+<status status="PASS" starttime="20210626 19:31:45.836" endtime="20210626 19:31:45.973"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${User_Data.email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 19:31:45.976" level="INFO">Typing text 'your@email.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20210626 19:31:45.973" endtime="20210626 19:31:46.161"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=phone</arg>
+<arg>${User_Data.phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 19:31:46.163" level="INFO">Typing text '1234567890' into text field 'id=phone'.</msg>
+<status status="PASS" starttime="20210626 19:31:46.162" endtime="20210626 19:31:46.292"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=message</arg>
+<arg>${User_Data.message}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 19:31:46.294" level="INFO">Typing text 'Your message' into text field 'id=message'.</msg>
+<status status="PASS" starttime="20210626 19:31:46.292" endtime="20210626 19:31:46.418"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:45.836" endtime="20210626 19:31:46.418"/>
+</kw>
+<kw name="click on send message" library="Contact">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SEND_MESSAGE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210626 19:31:46.420" level="INFO">Clicking button 'Send Message'.</msg>
+<status status="PASS" starttime="20210626 19:31:46.419" endtime="20210626 19:31:46.491"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:46.419" endtime="20210626 19:31:46.491"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:45.835" endtime="20210626 19:31:46.491"/>
+</kw>
+<kw name="verify message is sent" library="Frontoffice">
+<var>${status}</var>
+<kw name="verify message sent" library="Contact">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${SUCESS}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210626 19:31:46.493" endtime="20210626 19:31:47.960"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:46.492" endtime="20210626 19:31:47.960"/>
+</kw>
+<msg timestamp="20210626 19:31:47.961" level="INFO">${status} = None</msg>
+<status status="PASS" starttime="20210626 19:31:46.492" endtime="20210626 19:31:47.961"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}=='Sucess'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20210626 19:31:47.962" level="FAIL">Keyword 'BuiltIn.Should Be Equal' expected 2 to 7 arguments, got 1.</msg>
+<status status="FAIL" starttime="20210626 19:31:47.961" endtime="20210626 19:31:47.962"/>
+</kw>
+<kw name="Load the URL" library="Backoffice">
+<status status="NOT RUN" starttime="20210626 19:31:47.963" endtime="20210626 19:31:47.963"/>
+</kw>
+<kw name="verify backoffice is loaded" library="Backoffice">
+<status status="NOT RUN" starttime="20210626 19:31:47.963" endtime="20210626 19:31:47.963"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210626 19:31:47.964" endtime="20210626 19:31:50.803"/>
+</kw>
+<status status="PASS" starttime="20210626 19:31:47.964" endtime="20210626 19:31:50.803"/>
+</kw>
+<status status="FAIL" starttime="20210626 19:31:28.921" endtime="20210626 19:31:50.803">Keyword 'BuiltIn.Should Be Equal' expected 2 to 7 arguments, got 1.</status>
+</test>
+<status status="FAIL" starttime="20210626 19:31:28.599" endtime="20210626 19:31:50.805"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC002">TC002</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210626 19:31:28.906" level="ERROR">Error in file 'C:\Users\shivarajkumar\PycharmProjects\AssignmentOne\Resources\PageObject\Contact.robot' on line 4: Resource file '..\DataManager\InputData.robot' does not exist.</msg>
+</errors>
+</robot>
